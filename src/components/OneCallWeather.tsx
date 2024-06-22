@@ -6,8 +6,8 @@ interface IWeather {
   daily: any;
 }
 
-const Weather = () => {
-  const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
+const OneCallWeather = () => {
+  //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
   const units: string = "imperial";
@@ -63,4 +63,4 @@ const Weather = () => {
   );
 };
 
-export default Weather;
+export default OneCallWeather;

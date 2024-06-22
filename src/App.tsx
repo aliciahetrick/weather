@@ -1,10 +1,12 @@
 import "./App.css";
-import Weather from "./components/weather";
+import CurrentWeather from "./components/CurrentWeather";
+// import OneCallWeather from "./components/OneCallWeather";
 
 function App() {
   return (
     <>
-      <Weather />
+      {/* <OneCallWeather /> */}
+      <CurrentWeather />
     </>
   );
 }
