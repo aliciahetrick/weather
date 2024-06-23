@@ -9,7 +9,7 @@ const CurrentDateAndTime = ({ weather }) => {
     function updateTime() {
       const currentTime = new Date();
       const hours = currentTime.getHours();
-      let minutes = currentTime.getMinutes();
+      let minutes: any = currentTime.getMinutes();
       if (minutes < 10) {
         minutes = "0" + minutes;
       }

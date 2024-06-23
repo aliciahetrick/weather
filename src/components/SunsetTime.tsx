@@ -11,7 +11,7 @@ const SunsetTime = ({ weather }) => {
         const date = new Date(unixTimestamp * 1000);
 
         const hours = date.getHours();
-        let minutes = date.getMinutes();
+        let minutes: any = date.getMinutes();
 
         if (minutes < 10) {
           minutes = "0" + minutes;
