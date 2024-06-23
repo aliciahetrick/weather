@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 
 const CurrentDateAndTime = ({ weather }) => {
   const [time, setTime] = useState<string | null>(null);
-  const [date, setDate] = useState(null);
-  const [sunsetTime, setSunsetTime] = useState<any | null>(null);
+  const [date, setDate] = useState<string | null>(null);
 
   useEffect(() => {
     function updateTime() {
@@ -22,8 +21,10 @@ const CurrentDateAndTime = ({ weather }) => {
       }
       setTime(time);
     }
-
     setInterval(updateTime, 1000);
+  }, []);
+
+  useEffect(() => {
     function getDate() {
       if (weather) {
         let unixTimestamp = weather.dt;
@@ -38,7 +39,7 @@ const CurrentDateAndTime = ({ weather }) => {
       }
     }
     getDate();
-  }, []);
+  }, [weather]);
 
   return (
     <div>
