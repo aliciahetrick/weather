@@ -1,6 +1,8 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
 import { TemporaryCurrentWeatherData } from "./TemporaryCurrentWeatherData";
+import CurrentDateAndTime from "./DateTimeSunset";
+import SunsetTime from "./SunsetTime";
 
 // interface IWeather {
 //   current: any;
@@ -50,6 +52,9 @@ const CurrentWeather = () => {
       {weather && <p>{Math.floor(weather.main.temp_min)}</p>}
       <h2>Max</h2>
       {weather && <p>{Math.floor(weather.main.temp_max)}</p>}
+
+      <CurrentDateAndTime weather={weather} />
+      <SunsetTime weather={weather} />
     </div>
   );
 };
