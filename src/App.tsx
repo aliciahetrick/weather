@@ -1,14 +1,20 @@
-import "./App.css";
 import CurrentWeather from "./components/CurrentWeather";
-// import OneCallWeather from "./components/OneCallWeather";
+
+import styled from "styled-components";
 
 function App() {
   return (
     <>
-      {/* <OneCallWeather /> */}
-      <CurrentWeather />
+      <Wrapper>
+        <CurrentWeather />
+      </Wrapper>
     </>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  background-color: #efb61f;
+  border: 1px solid red;
+`;

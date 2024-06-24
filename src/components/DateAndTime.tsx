@@ -1,7 +1,12 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
+import { ICurrentWeatherData } from "./CurrentWeather";
 
-const CurrentDateAndTime = ({ weather }) => {
+interface Props {
+  weather: ICurrentWeatherData;
+}
+
+const CurrentDateAndTime = ({ weather }: Props) => {
   const [time, setTime] = useState<string | null>(null);
   const [date, setDate] = useState<string | null>(null);
 

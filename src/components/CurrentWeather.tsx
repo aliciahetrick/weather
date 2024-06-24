@@ -3,14 +3,12 @@ import { useState, useEffect } from "react";
 import { TemporaryCurrentWeatherData } from "./TemporaryCurrentWeatherData";
 import CurrentDateAndTime from "./DateAndTime";
 import SunsetTime from "./SunsetTime";
+import styled from "styled-components";
 
-// interface IWeather {
-//   current: any;
-//   daily: any;
-// }
-
-interface ITemporaryCurrentWeatherData {
+export interface ICurrentWeatherData {
   main: any;
+  sys: any;
+  dt: any;
 }
 
 const CurrentWeather = () => {
@@ -19,10 +17,8 @@ const CurrentWeather = () => {
   //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
   //   const units: string = "imperial";
 
-  //   const [weather, setWeather] = useState<IWeather | null>(null);
-  const [weather, setWeather] = useState<ITemporaryCurrentWeatherData | null>(
-    null
-  );
+  //   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
+  const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
 
   console.log("weather", weather);
 
@@ -45,7 +41,7 @@ const CurrentWeather = () => {
   }, []);
 
   return (
-    <div>
+    <Wrapper>
       <h2>Current temp</h2>
       {weather && <p>{Math.floor(weather.main.temp)}</p>}
       <h2>Min</h2>
@@ -55,8 +51,10 @@ const CurrentWeather = () => {
 
       <CurrentDateAndTime weather={weather} />
       <SunsetTime weather={weather} />
-    </div>
+    </Wrapper>
   );
 };
 
 export default CurrentWeather;
+
+const Wrapper = styled.div``;
