@@ -15,9 +15,7 @@ const CurrentWeather = () => {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
   //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
-  //   const units: string = "imperial";
 
-  //   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
 
   console.log("weather", weather);
