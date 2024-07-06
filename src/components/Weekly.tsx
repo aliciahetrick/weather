@@ -4,8 +4,10 @@ import { TemporaryWeeklyWeatherData } from "./TemporaryWeeklyWeatherData";
 import styled from "styled-components";
 
 export interface IWeeklyWeatherData {
-  list: any;
+  list: any[];
 }
+
+export interface IDailyWeatherData {}
 
 const Weekly = () => {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
@@ -14,8 +16,17 @@ const Weekly = () => {
   //   const units = "imperial";
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
+  const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData | null>(
+    null
+  );
+
+  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
   console.log("weekly weather", weather);
+  //   console.log("dt", weather.list[0].dt);
+
+  //   const date = new Date(weather.list[0].dt) * 1000)
+  //   console.log("dt type", new Date(weather.list[0].dt * 1000));
 
   //   useEffect(() => {
   //     fetch(
@@ -35,26 +46,44 @@ const Weekly = () => {
     setWeather(TemporaryWeeklyWeatherData);
   }, []);
 
+  useEffect(() => {
+    let newArr = weather?.list.filter(function (value, index) {
+      return index % 8 == 0;
+    });
+    setDailyWeather(newArr);
+  }, [weather]);
+
   return (
-    <>
-      {weather &&
-        weather?.list.map((listItem) => {
+    <Wrapper>
+      {dailyWeather &&
+        dailyWeather.map((listItem) => {
           return (
             <WeeklyWeatherCard>
-              {Math.floor(listItem.main.temp)}
+              {dayNames[new Date(listItem.dt * 1000).getDay()]}
+              {"  " + new Date(listItem.dt * 1000).getDate()}
+              <p>{Math.floor(listItem.main.temp)}</p>
+              <p>Min: {listItem.main.temp_min}</p>
+              <p>Max: {listItem.main.temp_max}</p>
             </WeeklyWeatherCard>
           );
         })}
-    </>
+    </Wrapper>
   );
 };
 
 export default Weekly;
 
-const WeeklyWeatherCard = styled.div`
+const Wrapper = styled.div`
   border: 1px solid red;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+`;
+
+const WeeklyWeatherCard = styled.div`
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 `;
 
