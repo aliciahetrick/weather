@@ -39,20 +39,34 @@ const CurrentWeather = () => {
   }, []);
 
   return (
-    <Wrapper>
-      <h2>Current temp</h2>
-      {weather && <p>{Math.floor(weather.main.temp)}</p>}
-      <h2>Min</h2>
-      {weather && <p>{Math.floor(weather.main.temp_min)}</p>}
-      <h2>Max</h2>
-      {weather && <p>{Math.floor(weather.main.temp_max)}</p>}
-
-      <CurrentDateAndTime weather={weather} />
-      <SunsetTime weather={weather} />
-    </Wrapper>
+    <WrapperTop>
+      <WrapperLeft>
+        <CurrentDateAndTime weather={weather} />
+        <SunsetTime weather={weather} />
+      </WrapperLeft>
+      <WrapperRight>
+        <h2>Current temp</h2>
+        {weather && <p>{Math.floor(weather.main.temp)}</p>}
+        <h2>Min</h2>
+        {weather && <p>{Math.floor(weather.main.temp_min)}</p>}
+        <h2>Max</h2>
+        {weather && <p>{Math.floor(weather.main.temp_max)}</p>}
+      </WrapperRight>
+    </WrapperTop>
   );
 };
 
 export default CurrentWeather;
 
-const Wrapper = styled.div``;
+const WrapperTop = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const WrapperLeft = styled.div`
+  border: 1px solid green;
+`;
+
+const WrapperRight = styled.div`
+  border: 1px solid blue;
+`;
