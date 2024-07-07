@@ -64,6 +64,7 @@ const Weekly = () => {
               <p>{Math.floor(listItem.main.temp)}</p>
               <p>Min: {listItem.main.temp_min}</p>
               <p>Max: {listItem.main.temp_max}</p>
+              <p>{listItem.weather[0].main}</p>
             </WeeklyWeatherCard>
           );
         })}

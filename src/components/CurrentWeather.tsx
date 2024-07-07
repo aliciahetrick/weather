@@ -45,12 +45,17 @@ const CurrentWeather = () => {
         <SunsetTime weather={weather} />
       </WrapperLeft>
       <WrapperRight>
-        <h2>Current temp</h2>
-        {weather && <p>{Math.floor(weather.main.temp)}</p>}
-        <h2>Min</h2>
-        {weather && <p>{Math.floor(weather.main.temp_min)}</p>}
-        <h2>Max</h2>
-        {weather && <p>{Math.floor(weather.main.temp_max)}</p>}
+        <CurrentTemp>
+          {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
+        </CurrentTemp>
+        <MinAndMax>
+          <Min>
+            Min {weather && <div>{Math.floor(weather.main.temp_min)}</div>}
+          </Min>
+          <Max>
+            Max {weather && <div>{Math.floor(weather.main.temp_max)}</div>}
+          </Max>
+        </MinAndMax>
       </WrapperRight>
     </WrapperTop>
   );
@@ -68,5 +73,39 @@ const WrapperLeft = styled.div`
 `;
 
 const WrapperRight = styled.div`
-  border: 1px solid blue;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2em;
+`;
+
+const CurrentTemp = styled.p`
+  font-size: 250px;
+  font-weight: 600;
+  border: 1px solid black;
+  margin-top: 0;
+  margin-bottom: 0;
+`;
+
+const MinAndMax = styled.div`
+  // display: "flex";
+  // flex-direction: row;
+  border: 1px solid red;
+  text-align: center;
+`;
+
+const Min = styled.div`
+  font-size: 30px;
+  font-weight: 600;
+  border: 1px solid purple;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+`;
+
+const Max = styled.div`
+  font-size: 30px;
+  font-weight: 600;
+  border: 1px solid purple;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
 `;

@@ -1,6 +1,7 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
 import { ICurrentWeatherData } from "./CurrentWeather";
+import styled from "styled-components";
 
 interface Props {
   weather: ICurrentWeatherData;
@@ -47,13 +48,19 @@ const CurrentDateAndTime = ({ weather }: Props) => {
   }, [weather]);
 
   return (
-    <div>
-      <p>date</p>
-      {date}
-      <p>time</p>
-      {time}
-    </div>
+    <Wrapper>
+      <div>{date}</div>
+      <div>{time}</div>
+    </Wrapper>
   );
 };
 
 export default CurrentDateAndTime;
+
+const Wrapper = styled.div`
+  font-size: 100px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  margin-top: 1em;
+`;
