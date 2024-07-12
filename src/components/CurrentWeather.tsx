@@ -39,47 +39,27 @@ const CurrentWeather = () => {
   }, []);
 
   return (
-    <WrapperTop>
+    <Wrapper>
       <WrapperLeft>
-        <CurrentDateAndTime weather={weather} />
-        <SunsetTime weather={weather} />
+        {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
       </WrapperLeft>
       <WrapperRight>
-        <CurrentTemp>
-          {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
-        </CurrentTemp>
-        <MinAndMax>
-          <Min>
-            Min {weather && <div>{Math.floor(weather.main.temp_min)}</div>}
-          </Min>
-          <Max>
-            Max {weather && <div>{Math.floor(weather.main.temp_max)}</div>}
-          </Max>
-        </MinAndMax>
+        <CurrentDateAndTime weather={weather} />
+        <SunsetTime weather={weather} />
       </WrapperRight>
-    </WrapperTop>
+    </Wrapper>
   );
 };
 
 export default CurrentWeather;
 
-const WrapperTop = styled.div`
+const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
 `;
 
 const WrapperLeft = styled.div`
   border: 1px solid green;
-`;
-
-const WrapperRight = styled.div`
-  border: 1px solid green;
-  display: flex;
-  flex-direction: column;
-  border-radius: 2em;
-`;
-
-const CurrentTemp = styled.p`
   font-size: 250px;
   font-weight: 600;
   border: 1px solid black;
@@ -87,25 +67,9 @@ const CurrentTemp = styled.p`
   margin-bottom: 0;
 `;
 
-const MinAndMax = styled.div`
-  // display: "flex";
-  // flex-direction: row;
-  border: 1px solid red;
-  text-align: center;
-`;
-
-const Min = styled.div`
-  font-size: 30px;
-  font-weight: 600;
-  border: 1px solid purple;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-`;
-
-const Max = styled.div`
-  font-size: 30px;
-  font-weight: 600;
-  border: 1px solid purple;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
+const WrapperRight = styled.div`
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2em;
 `;

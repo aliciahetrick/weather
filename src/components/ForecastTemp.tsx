@@ -61,10 +61,11 @@ const Weekly = () => {
             <WeeklyWeatherCard>
               {dayNames[new Date(listItem.dt * 1000).getDay()]}
               {"  " + new Date(listItem.dt * 1000).getDate()}
-              <p>{Math.floor(listItem.main.temp)}</p>
-              <p>Min: {listItem.main.temp_min}</p>
-              <p>Max: {listItem.main.temp_max}</p>
               <p>{listItem.weather[0].main}</p>
+              <HighAndLowTemp>
+                <div>{Math.floor(listItem.main.temp_max)}</div>
+                <div>{Math.floor(listItem.main.temp_min)}</div>
+              </HighAndLowTemp>
             </WeeklyWeatherCard>
           );
         })}
@@ -88,10 +89,7 @@ const WeeklyWeatherCard = styled.div`
   justify-content: space-around;
 `;
 
-// const WrapperLeft = styled.div`
-//   border: 1px solid green;
-// `;
-
-// const WrapperRight = styled.div`
-//   border: 1px solid blue;
-// `;
+const HighAndLowTemp = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;

@@ -37,11 +37,7 @@ const CurrentDateAndTime = ({ weather }: Props) => {
         const time = new Date(unixTimestamp * 1000);
         const dateString = time.toDateString();
         const dateWithRemovedYear = dateString.slice(0, -5);
-        const dateWithoutDayOfWeek = dateWithRemovedYear
-          .split(" ")
-          .slice(1)
-          .join(" ");
-        setDate(dateWithoutDayOfWeek);
+        setDate(dateWithRemovedYear);
       }
     }
     getDate();
