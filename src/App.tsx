@@ -2,7 +2,7 @@ import CurrentWeather from "./components/CurrentWeather";
 import styled from "styled-components";
 
 import "./App.css";
-import Weekly from "./components/Weekly";
+import Weekly from "./components/ForecastTemp";
 
 function App() {
   return (
