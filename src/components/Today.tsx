@@ -9,9 +9,10 @@ export interface ICurrentWeatherData {
   main: any;
   sys: any;
   dt: any;
+  weather: any;
 }
 
-const CurrentWeather = () => {
+const Today = () => {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
   //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
@@ -19,6 +20,7 @@ const CurrentWeather = () => {
   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
 
   console.log("weather", weather);
+  console.log("weather precip", weather.weather[0]);
 
   //   useEffect(() => {
   //     fetch(
@@ -45,13 +47,14 @@ const CurrentWeather = () => {
       </WrapperLeft>
       <WrapperRight>
         <DateTime weather={weather} />
+        {weather && <div>{weather.weather[0].description}</div>}
         <SunsetTime weather={weather} />
       </WrapperRight>
     </Wrapper>
   );
 };
 
-export default CurrentWeather;
+export default Today;
 
 const Wrapper = styled.div`
   display: flex;

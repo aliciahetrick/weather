@@ -1,6 +1,6 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
-import { ICurrentWeatherData } from "./Current";
+import { ICurrentWeatherData } from "./Today";
 import styled from "styled-components";
 
 interface Props {

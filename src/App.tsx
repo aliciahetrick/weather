@@ -1,15 +1,15 @@
-import CurrentWeather from "./components/Current";
+import CurrentWeather from "./components/Today";
 import styled from "styled-components";
 
 import "./App.css";
-import Weekly from "./components/ForecastTemp";
+import ForecastTemp from "./components/ForecastTemp";
 
 function App() {
   return (
     <>
       <CurrentWeather />
       <WrapperBottom>
-        <Weekly />
+        <ForecastTemp />
       </WrapperBottom>
     </>
   );
