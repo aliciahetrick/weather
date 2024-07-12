@@ -1,4 +1,4 @@
-import CurrentWeather from "./components/CurrentWeather";
+import CurrentWeather from "./components/Current";
 import styled from "styled-components";
 
 import "./App.css";
