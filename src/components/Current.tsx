@@ -1,8 +1,8 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
 import { TemporaryCurrentWeatherData } from "./TemporaryCurrentWeatherData";
-import Today from "./Today";
-import SunsetTime from "./SunsetTime";
+import Today from "./DateTime";
+import SunsetTime from "./Sunset";
 import styled from "styled-components";
 
 export interface ICurrentWeatherData {
