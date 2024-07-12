@@ -1,7 +1,7 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
 import { TemporaryCurrentWeatherData } from "./TemporaryCurrentWeatherData";
-import Today from "./DateTime";
+import DateTime from "./DateTime";
 import SunsetTime from "./Sunset";
 import styled from "styled-components";
 
@@ -44,9 +44,8 @@ const CurrentWeather = () => {
         {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
       </WrapperLeft>
       <WrapperRight>
-        <Today weather={weather} />
+        <DateTime weather={weather} />
         <SunsetTime weather={weather} />
-        //here
       </WrapperRight>
     </Wrapper>
   );

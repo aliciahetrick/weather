@@ -35,8 +35,7 @@ const SunsetTime = ({ weather }: Props) => {
 
   return (
     <div>
-      <p>sunset</p>
-      {weather && sunsetTime}
+      <p>sunset {weather && sunsetTime}</p>
     </div>
   );
 };

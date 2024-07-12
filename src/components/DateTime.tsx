@@ -14,27 +14,21 @@ const CurrentDateAndTime = ({ weather }: Props) => {
   useEffect(() => {
     function updateTime() {
       const currentTime = new Date();
-      let hours = currentTime.getHours();
+      const hours = currentTime.getHours();
       let minutes: any = currentTime.getMinutes();
       if (minutes < 10) {
         minutes = "0" + minutes;
       }
-
+      var time = hours + ":" + minutes + " ";
       if (hours > 11) {
         time += "PM";
-        if (hours > 13) {
-          hours = hours - 12;
-        }
       } else {
         time += "AM";
-        if (hours > 13) {
-          hours = hours - 12;
-        }
       }
-      var time = hours + ":" + minutes + " ";
+
       setTime(time);
     }
-    setInterval(updateTime);
+    setInterval(updateTime, 1000);
   }, []);
 
   useEffect(() => {
