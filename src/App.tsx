@@ -2,14 +2,14 @@ import CurrentWeather from "./components/Today";
 import styled from "styled-components";
 
 import "./App.css";
-import ForecastTemp from "./components/ForecastTemp";
+import Forecast from "./components/Forecast";
 
 function App() {
   return (
     <>
       <CurrentWeather />
       <WrapperBottom>
-        <ForecastTemp />
+        <Forecast />
       </WrapperBottom>
     </>
   );

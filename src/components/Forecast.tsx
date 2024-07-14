@@ -7,15 +7,19 @@ export interface IWeeklyWeatherData {
   list: any[];
 }
 
+export interface IHourlyPrecipitation {}
+
 export interface IDailyWeatherData {}
 
-const Weekly = () => {
+const Forecast = () => {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
   //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
   //   const units = "imperial";
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
+  const [hourlyPrecipitation, setHourlyPrecipitation] =
+    useState<IHourlyPrecipitation | null>(null);
   const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData | null>(
     null
   );
@@ -51,31 +55,57 @@ const Weekly = () => {
       return index % 8 == 0;
     });
     setDailyWeather(newArr);
+
+    let newArrPrecip = weather?.list.slice(0, 5);
+    console.log("precip list", newArrPrecip);
+    setHourlyPrecipitation(newArrPrecip);
   }, [weather]);
 
+  console.log("forecast", weather);
+  console.log("forecast", weather);
+
   return (
-    <Wrapper>
-      {dailyWeather &&
-        dailyWeather.map((listItem) => {
-          return (
-            <WeeklyWeatherCard>
-              {dayNames[new Date(listItem.dt * 1000).getDay()]}
-              {"  " + new Date(listItem.dt * 1000).getDate()}
-              <p>{listItem.weather[0].main}</p>
-              <HighAndLowTemp>
-                <div>{Math.floor(listItem.main.temp_max)}</div>
-                <div>{Math.floor(listItem.main.temp_min)}</div>
-              </HighAndLowTemp>
-            </WeeklyWeatherCard>
-          );
-        })}
-    </Wrapper>
+    <WrapperColumns>
+      <WrapperRows>
+        {hourlyPrecipitation &&
+          hourlyPrecipitation.map((listItem) => {
+            return (
+              <WeeklyWeatherCard>
+                <div>{listItem.pop * 100}%</div>
+                {"  " + new Date(listItem.dt * 1000).getHours()}
+              </WeeklyWeatherCard>
+            );
+          })}
+      </WrapperRows>
+      <WrapperRows>
+        {dailyWeather &&
+          dailyWeather.map((listItem) => {
+            return (
+              <WeeklyWeatherCard>
+                {dayNames[new Date(listItem.dt * 1000).getDay()]}
+                {"  " + new Date(listItem.dt * 1000).getDate()}
+                <p>{listItem.weather[0].main}</p>
+                <HighAndLowTemp>
+                  <div>{Math.floor(listItem.main.temp_max)}</div>
+                  <div>{Math.floor(listItem.main.temp_min)}</div>
+                </HighAndLowTemp>
+              </WeeklyWeatherCard>
+            );
+          })}
+      </WrapperRows>
+    </WrapperColumns>
   );
 };
 
-export default Weekly;
+export default Forecast;
 
-const Wrapper = styled.div`
+const WrapperColumns = styled.div`
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+`;
+
+const WrapperRows = styled.div`
   border: 1px solid red;
   display: flex;
   flex-direction: row;
