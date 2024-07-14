@@ -20,7 +20,6 @@ const Today = () => {
   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
 
   console.log("weather", weather);
-  console.log("weather precip", weather.weather[0]);
 
   //   useEffect(() => {
   //     fetch(

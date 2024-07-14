@@ -7,9 +7,16 @@ export interface IWeeklyWeatherData {
   list: any[];
 }
 
-export interface IHourlyPrecipitation {}
+export interface IHourlyPrecipitation {
+  pop: number;
+  dt: number;
+}
 
-export interface IDailyWeatherData {}
+export interface IDailyWeatherData {
+  weather: any[];
+  pop: number;
+  dt: number;
+}
 
 const Forecast = () => {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
@@ -18,9 +25,10 @@ const Forecast = () => {
   //   const units = "imperial";
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
-  const [hourlyPrecipitation, setHourlyPrecipitation] =
-    useState<IHourlyPrecipitation | null>(null);
-  const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData | null>(
+  const [hourlyPrecipitation, setHourlyPrecipitation] = useState<
+    IHourlyPrecipitation[] | null
+  >(null);
+  const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData[] | null>(
     null
   );
 
@@ -69,10 +77,20 @@ const Forecast = () => {
       <WrapperRows>
         {hourlyPrecipitation &&
           hourlyPrecipitation.map((listItem) => {
+            if (new Date(listItem.dt * 1000).getHours() > 12) {
+              return (
+                <WeeklyWeatherCard>
+                  <div>{listItem.pop * 100}%</div>
+                  {"  " +
+                    (new Date(listItem.dt * 1000).getHours() - 12) +
+                    " PM"}
+                </WeeklyWeatherCard>
+              );
+            }
             return (
               <WeeklyWeatherCard>
                 <div>{listItem.pop * 100}%</div>
-                {"  " + new Date(listItem.dt * 1000).getHours()}
+                {"  " + new Date(listItem.dt * 1000).getHours() + " AM"}
               </WeeklyWeatherCard>
             );
           })}
