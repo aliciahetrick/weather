@@ -36,7 +36,11 @@ const Today = () => {
   //   }, []);
 
   useEffect(() => {
-    setWeather(TemporaryCurrentWeatherData);
+    //fetches the weather every 24 hours
+    const fetchDataInterval = setInterval(() => {
+      setWeather(TemporaryCurrentWeatherData);
+    }, 24 * 60 * 60 * 1000); // 24 hours in milliseconds
+    return () => clearInterval(fetchDataInterval);
   }, []);
 
   return (
