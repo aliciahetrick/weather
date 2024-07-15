@@ -19,8 +19,6 @@ const Today = () => {
 
   const [weather, setWeather] = useState<ICurrentWeatherData | null>(null);
 
-  console.log("weather", weather);
-
   //   useEffect(() => {
   //     fetch(
   //       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,

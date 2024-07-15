@@ -24,6 +24,7 @@ const Forecast = () => {
   //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
   //   const units = "imperial";
+  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
   const [hourlyPrecipitation, setHourlyPrecipitation] = useState<
@@ -32,14 +33,6 @@ const Forecast = () => {
   const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData[] | null>(
     null
   );
-
-  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
-
-  console.log("weekly weather", weather);
-  //   console.log("dt", weather.list[0].dt);
-
-  //   const date = new Date(weather.list[0].dt) * 1000)
-  //   console.log("dt type", new Date(weather.list[0].dt * 1000));
 
   //   useEffect(() => {
   //     fetch(
@@ -64,18 +57,14 @@ const Forecast = () => {
   }, []);
 
   useEffect(() => {
-    let newArr = weather?.list.filter(function (value, index) {
+    let newArrDaily = weather?.list.filter(function (_value, index) {
       return index % 8 == 0;
     });
-    setDailyWeather(newArr);
+    setDailyWeather(newArrDaily);
 
     let newArrPrecip = weather?.list.slice(0, 5);
-    console.log("precip list", newArrPrecip);
     setHourlyPrecipitation(newArrPrecip);
   }, [weather]);
-
-  console.log("forecast", weather);
-  console.log("forecast", weather);
 
   return (
     <WrapperColumns>
