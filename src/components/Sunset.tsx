@@ -35,7 +35,11 @@ const SunsetTime = ({ weather }: Props) => {
 
   return (
     <div>
-      <p>sunset {weather && sunsetTime}</p>
+      {weather && Number(sunsetTime.slice(0, 2)) > 12 ? (
+        <div>{Number(sunsetTime.slice(0, 2)) - 12 + sunsetTime.slice(2)}</div>
+      ) : (
+        <div>{sunsetTime}</div>
+      )}
     </div>
   );
 };
