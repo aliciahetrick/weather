@@ -44,10 +44,19 @@ const CurrentDateAndTime = ({ weather }: Props) => {
     getDate();
   }, [weather]);
 
+  console.log(time);
+  console.log("time", Number(time.slice(0, 2)) > 12);
+  console.log(Number(time) - 12 + "lalala");
+
   return (
     <Wrapper>
       <div>{date}</div>
-      <div>{time}</div>
+
+      {Number(time.slice(0, 2)) > 12 ? (
+        <div>{Number(time.slice(0, 2)) - 12 + time.slice(2)}</div>
+      ) : (
+        <div>{time}</div>
+      )}
     </Wrapper>
   );
 };
