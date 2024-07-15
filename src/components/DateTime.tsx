@@ -64,5 +64,4 @@ const Wrapper = styled.div`
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  margin-top: 1em;
 `;

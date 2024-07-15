@@ -1,6 +1,7 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
 import { ICurrentWeatherData } from "./Today";
+import styled from "styled-components";
 
 interface Props {
   weather: ICurrentWeatherData;
@@ -34,14 +35,21 @@ const SunsetTime = ({ weather }: Props) => {
   }, [weather]);
 
   return (
-    <div>
+    <Wrapper>
       {weather && sunsetTime && Number(sunsetTime.slice(0, 2)) > 12 ? (
         <div>{Number(sunsetTime.slice(0, 2)) - 12 + sunsetTime.slice(2)}</div>
       ) : (
         <div>{sunsetTime}</div>
       )}
-    </div>
+    </Wrapper>
   );
 };
 
 export default SunsetTime;
+
+const Wrapper = styled.div`
+  font-size: 100px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+`;

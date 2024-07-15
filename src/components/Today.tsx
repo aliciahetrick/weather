@@ -48,7 +48,10 @@ const Today = () => {
       </WrapperLeft>
       <WrapperRight>
         <DateTime weather={weather} />
-        {weather && <div>{weather.weather[0].description}</div>}
+
+        {weather && (
+          <WeatherEvent>{weather.weather[0].description}</WeatherEvent>
+        )}
         <SunsetTime weather={weather} />
       </WrapperRight>
     </Wrapper>
@@ -62,6 +65,13 @@ const Wrapper = styled.div`
   justify-content: space-around;
 `;
 
+const WeatherEvent = styled.div`
+  font-size: 100px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+`;
+
 const WrapperLeft = styled.div`
   border: 1px solid green;
   font-size: 250px;
@@ -69,6 +79,8 @@ const WrapperLeft = styled.div`
   border: 1px solid black;
   margin-top: 0;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 `;
 
 const WrapperRight = styled.div`

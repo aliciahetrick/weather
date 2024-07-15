@@ -96,7 +96,7 @@ const Forecast = () => {
               <WeeklyWeatherCard>
                 {dayNames[new Date(listItem.dt * 1000).getDay()]}
                 {"  " + new Date(listItem.dt * 1000).getDate()}
-                <p>{listItem.weather[0].main}</p>
+                <div>{listItem.weather[0].main}</div>
                 <HighAndLowTemp>
                   <div>{Math.floor(listItem.main.temp_max)}</div>
                   <div>{Math.floor(listItem.main.temp_min)}</div>
@@ -122,6 +122,8 @@ const WrapperRows = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  font-size: 60px;
+  font-weight: 600;
 `;
 
 const WeeklyWeatherCard = styled.div`
