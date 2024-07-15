@@ -50,10 +50,10 @@ const Forecast = () => {
 
   useEffect(() => {
     //fetches the weather every 3 hours
-    const fetchDataInterval = setInterval(() => {
-      setWeather(TemporaryWeeklyWeatherData);
-    }, 3 * 60 * 60 * 1000); // 3 hours in milliseconds
-    return () => clearInterval(fetchDataInterval);
+    // const fetchDataInterval = setInterval(() => {
+    setWeather(TemporaryWeeklyWeatherData);
+    // }, 3 * 60 * 60 * 1000); // 3 hours in milliseconds
+    // return () => clearInterval(fetchDataInterval);
   }, []);
 
   useEffect(() => {
