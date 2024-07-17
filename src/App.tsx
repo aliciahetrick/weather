@@ -18,5 +18,5 @@ function App() {
 export default App;
 
 const WrapperBottom = styled.div`
-  border: 1px solid blue;
+  // border: 1px solid blue;
 `;

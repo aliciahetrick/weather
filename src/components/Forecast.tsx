@@ -112,22 +112,24 @@ const Forecast = () => {
 export default Forecast;
 
 const WrapperColumns = styled.div`
-  border: 1px solid red;
+  //   border: 1px solid red;
   display: flex;
   flex-direction: column;
 `;
 
 const WrapperRows = styled.div`
-  border: 1px solid red;
+  //   border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   font-size: 60px;
   font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 60px;
 `;
 
 const WeeklyWeatherCard = styled.div`
-  border: 1px solid red;
+  //   border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

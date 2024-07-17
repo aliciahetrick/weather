@@ -63,29 +63,31 @@ export default Today;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-bottom: 100px;
 `;
 
 const WeatherEvent = styled.div`
-  font-size: 100px;
+  font-size: 60px;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 `;
 
 const WrapperLeft = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
   font-size: 250px;
   font-weight: 600;
-  border: 1px solid black;
-  margin-top: 0;
-  margin-bottom: 0;
+  // border: 1px solid black;
   display: flex;
   align-items: center;
+  margin-right: 600px;
 `;
 
 const WrapperRight = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
   display: flex;
   flex-direction: column;
   border-radius: 2em;
+  font-size: 80px;
+  margin-top: 20px;
 `;
