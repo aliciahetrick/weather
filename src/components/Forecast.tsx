@@ -97,6 +97,10 @@ const Forecast = () => {
                 {dayNames[new Date(listItem.dt * 1000).getDay()]}
                 {"  " + new Date(listItem.dt * 1000).getDate()}
                 <div>{listItem.weather[0].main}</div>
+                {/* <SVG src="/cloud.svg"></SVG>
+                <SVG src="/rain.svg"></SVG>
+                <SVG src="/snow.svg"></SVG> */}
+                <SVG src="/sun.svg"></SVG>
                 <HighAndLowTemp>
                   <div>{Math.floor(listItem.main.temp_max)}</div>
                   <div>{Math.floor(listItem.main.temp_min)}</div>
@@ -133,6 +137,10 @@ const WeeklyWeatherCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+`;
+
+const SVG = styled.img`
+  width: 100px;
 `;
 
 const HighAndLowTemp = styled.div`
