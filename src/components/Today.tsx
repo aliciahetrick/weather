@@ -63,11 +63,14 @@ export default Today;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  // border: 1px solid red;
+  margin-top: 50px;
+  // padding-bottom: 50px;
 `;
 
 const WeatherEvent = styled.div`
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
@@ -89,5 +92,6 @@ const WrapperRight = styled.div`
   flex-direction: column;
   border-radius: 2em;
   font-size: 80px;
-  margin-top: 20px;
+  // margin-top: 20px;
+  // align-items: right;
 `;

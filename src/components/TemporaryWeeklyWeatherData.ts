@@ -19,7 +19,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 802,
-          main: "Clouds",
+          main: "Sun",
           description: "scattered clouds",
           icon: "03d",
         },
@@ -91,7 +91,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 802,
-          main: "Clouds",
+          main: "Snow",
           description: "scattered clouds",
           icon: "03n",
         },
@@ -127,7 +127,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 802,
-          main: "Clouds",
+          main: "Sun",
           description: "scattered clouds",
           icon: "03n",
         },
@@ -271,7 +271,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 804,
-          main: "Clouds",
+          main: "Snow",
           description: "overcast clouds",
           icon: "04d",
         },
@@ -343,7 +343,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 804,
-          main: "Clouds",
+          main: "Snow",
           description: "overcast clouds",
           icon: "04d",
         },
@@ -415,7 +415,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 804,
-          main: "Clouds",
+          main: "Snow",
           description: "overcast clouds",
           icon: "04n",
         },
@@ -487,7 +487,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 500,
-          main: "Rain",
+          main: "Snow",
           description: "light rain",
           icon: "10d",
         },
@@ -526,7 +526,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 804,
-          main: "Clouds",
+          main: "Snow",
           description: "overcast clouds",
           icon: "04d",
         },
@@ -670,7 +670,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 802,
-          main: "Clouds",
+          main: "Snow",
           description: "scattered clouds",
           icon: "03n",
         },
@@ -778,7 +778,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 802,
-          main: "Clouds",
+          main: "Snow",
           description: "scattered clouds",
           icon: "03d",
         },
@@ -928,7 +928,7 @@ export const TemporaryWeeklyWeatherData = {
       weather: [
         {
           id: 500,
-          main: "Rain",
+          main: "Snow",
           description: "light rain",
           icon: "10d",
         },

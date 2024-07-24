@@ -60,7 +60,7 @@ const CurrentDateAndTime = ({ weather }: Props) => {
 export default CurrentDateAndTime;
 
 const Wrapper = styled.div`
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;

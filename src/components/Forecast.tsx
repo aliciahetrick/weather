@@ -66,6 +66,8 @@ const Forecast = () => {
     setHourlyPrecipitation(newArrPrecip);
   }, [weather]);
 
+  console.log("daily weather", dailyWeather);
+
   return (
     <WrapperColumns>
       <WrapperRows>
@@ -74,17 +76,17 @@ const Forecast = () => {
             if (new Date(listItem.dt * 1000).getHours() > 12) {
               return (
                 <WeeklyWeatherCard>
-                  <div>{listItem.pop * 100}%</div>
                   {"  " +
                     (new Date(listItem.dt * 1000).getHours() - 12) +
                     " PM"}
+                  <div>{listItem.pop * 100}%</div>
                 </WeeklyWeatherCard>
               );
             }
             return (
               <WeeklyWeatherCard>
-                <div>{listItem.pop * 100}%</div>
                 {"  " + new Date(listItem.dt * 1000).getHours() + " AM"}
+                <div>{listItem.pop * 100}%</div>
               </WeeklyWeatherCard>
             );
           })}
@@ -96,11 +98,22 @@ const Forecast = () => {
               <WeeklyWeatherCard>
                 {dayNames[new Date(listItem.dt * 1000).getDay()]}
                 {"  " + new Date(listItem.dt * 1000).getDate()}
-                <div>{listItem.weather[0].main}</div>
-                {/* <SVG src="/cloud.svg"></SVG>
-                <SVG src="/rain.svg"></SVG>
-                <SVG src="/snow.svg"></SVG> */}
-                <SVG src="/sun.svg"></SVG>
+                {/* <SVG src="/cloud.svg"></SVG> */}
+                {listItem.weather[0].main === "Clouds" && (
+                  <SVG src="/cloud.svg"></SVG>
+                )}
+                {listItem.weather[0].main === "Rain" && (
+                  <SVG src="/rain.svg"></SVG>
+                )}
+                {listItem.weather[0].main === "Snow" && (
+                  <SVG src="/snow.svg"></SVG>
+                )}
+                {listItem.weather[0].main === "Sun" && (
+                  <SVG src="/sun.svg"></SVG>
+                )}
+                {/* <SVG src="/rain.svg"></SVG>
+                <SVG src="/snow.svg"></SVG>
+                <SVG src="/sun.svg"></SVG>  */}
                 <HighAndLowTemp>
                   <div>{Math.floor(listItem.main.temp_max)}</div>
                   <div>{Math.floor(listItem.main.temp_min)}</div>
@@ -119,6 +132,7 @@ const WrapperColumns = styled.div`
   //   border: 1px solid red;
   display: flex;
   flex-direction: column;
+  // border: 1px solid green;
 `;
 
 const WrapperRows = styled.div`
@@ -128,7 +142,7 @@ const WrapperRows = styled.div`
   justify-content: space-around;
   font-size: 60px;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 60px;
 `;
 
