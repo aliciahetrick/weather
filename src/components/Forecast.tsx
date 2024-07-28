@@ -136,7 +136,13 @@ const WrapperColumns = styled.div`
 `;
 
 const WrapperRows = styled.div`
-  // border: 1px solid red;
+  border: 1px solid red;
+  border-radius: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  background-color: white;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -148,7 +154,7 @@ const WrapperRows = styled.div`
 `;
 
 const WeeklyWeatherCard = styled.div`
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -164,7 +170,8 @@ const HighAndLowTemp = styled.div`
   display: flex;
   justify-content: space-around;
   font-size: 50px;
-  border: 1px solid green;
+  // border: 1px solid green;
+  width: 100%;
   // margin: 0;
   // padding: 0;
 `;
