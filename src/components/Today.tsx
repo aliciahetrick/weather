@@ -63,10 +63,6 @@ export default Today;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  // margin-bottom: 100px;
-  // border: 1px solid red;
-  margin-top: 50px;
-  // padding-bottom: 50px;
 `;
 
 const WeatherEvent = styled.div`
@@ -77,21 +73,17 @@ const WeatherEvent = styled.div`
 `;
 
 const WrapperLeft = styled.div`
-  // border: 1px solid green;
   font-size: 250px;
   font-weight: 600;
-  // border: 1px solid black;
   display: flex;
   align-items: center;
   margin-right: 600px;
 `;
 
 const WrapperRight = styled.div`
-  // border: 1px solid green;
   display: flex;
   flex-direction: column;
   border-radius: 2em;
   font-size: 80px;
-  // margin-top: 20px;
-  // align-items: right;
+  padding-top: 50px;
 `;
