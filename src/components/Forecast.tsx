@@ -136,7 +136,7 @@ const WrapperColumns = styled.div`
 `;
 
 const WrapperRows = styled.div`
-  //   border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -144,13 +144,16 @@ const WrapperRows = styled.div`
   font-weight: 600;
   margin-top: 30px;
   margin-bottom: 60px;
+  text-align: center;
 `;
 
 const WeeklyWeatherCard = styled.div`
-  //   border: 1px solid red;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  width: 300px;
 `;
 
 const SVG = styled.img`
@@ -160,4 +163,8 @@ const SVG = styled.img`
 const HighAndLowTemp = styled.div`
   display: flex;
   justify-content: space-around;
+  font-size: 50px;
+  border: 1px solid green;
+  // margin: 0;
+  // padding: 0;
 `;
