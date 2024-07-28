@@ -36,6 +36,7 @@ const SunsetTime = ({ weather }: Props) => {
 
   return (
     <Wrapper>
+      <SVG src="/sunset.svg"></SVG>
       {weather && sunsetTime && Number(sunsetTime.slice(0, 2)) > 12 ? (
         <div>{Number(sunsetTime.slice(0, 2)) - 12 + sunsetTime.slice(2)}</div>
       ) : (
@@ -52,4 +53,10 @@ const Wrapper = styled.div`
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SVG = styled.img`
+  width: 50px;
 `;

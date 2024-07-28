@@ -73,7 +73,7 @@ const WeatherEvent = styled.div`
 `;
 
 const WrapperLeft = styled.div`
-  font-size: 250px;
+  font-size: 200px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -86,4 +86,5 @@ const WrapperRight = styled.div`
   border-radius: 2em;
   font-size: 80px;
   padding-top: 50px;
+  text-align: right;
 `;

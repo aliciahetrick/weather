@@ -47,12 +47,15 @@ const CurrentDateAndTime = ({ weather }: Props) => {
   return (
     <Wrapper>
       <div>{date}</div>
+      <Time>
+        <SVG src="/time.svg"></SVG>
 
-      {time && Number(time.slice(0, 2)) > 12 ? (
-        <div>{time && Number(time.slice(0, 2)) - 12 + time.slice(2)}</div>
-      ) : (
-        <div>{time}</div>
-      )}
+        {time && Number(time.slice(0, 2)) > 12 ? (
+          <div>{time && Number(time.slice(0, 2)) - 12 + time.slice(2)}</div>
+        ) : (
+          <div>{time}</div>
+        )}
+      </Time>
     </Wrapper>
   );
 };
@@ -65,4 +68,13 @@ const Wrapper = styled.div`
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   // align-text: right;
+`;
+
+const Time = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SVG = styled.img`
+  width: 50px;
 `;
