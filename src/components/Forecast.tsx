@@ -136,11 +136,12 @@ const WrapperColumns = styled.div`
 `;
 
 const WrapperRows = styled.div`
-  border: 1px solid red;
+  border: 5px solid #f1f1f8;
+  // box-shadow: 3px 3px #d28fff;
   border-radius: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  background-color: white;
+  // background-color: #ffdbbb;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   display: flex;
@@ -149,7 +150,7 @@ const WrapperRows = styled.div`
   font-size: 60px;
   font-weight: 600;
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   text-align: center;
 `;
 
