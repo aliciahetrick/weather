@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import "./App.css";
 import Forecast from "./components/Forecast";
-import Chart from "./components/chart";
+import Chart from "./components/Chart";
 
 function App() {
   return (
