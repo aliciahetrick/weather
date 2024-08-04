@@ -3,12 +3,14 @@ import styled from "styled-components";
 
 import "./App.css";
 import Forecast from "./components/Forecast";
+import Chart from "./components/chart";
 
 function App() {
   return (
     <Wrapper>
       <WrapperTop>
         <CurrentWeather />
+        <Chart />
       </WrapperTop>
       <WrapperBottom>
         <Forecast />
