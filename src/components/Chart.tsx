@@ -12,7 +12,11 @@ import {
 
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
-const Chart = () => {
+const Chart = ({ hourlyPrecipitation }) => {
+  console.log("chart weather", hourlyPrecipitation);
+
+  // const precipTime =
+
   const data = {
     labels: ["Mon", "Tues", "Wed"],
     datasets: [

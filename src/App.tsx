@@ -10,7 +10,7 @@ function App() {
     <Wrapper>
       <WrapperTop>
         <CurrentWeather />
-        <Chart />
+        {/* <Chart /> */}
       </WrapperTop>
       <WrapperBottom>
         <Forecast />

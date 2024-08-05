@@ -2,6 +2,7 @@ require("dotenv").config();
 import { useState, useEffect } from "react";
 import { TemporaryWeeklyWeatherData } from "./TemporaryWeeklyWeatherData";
 import styled from "styled-components";
+import Chart from "./Chart";
 
 export interface IWeeklyWeatherData {
   list: any[];
@@ -71,6 +72,7 @@ const Forecast = () => {
   return (
     <WrapperColumns>
       <div>
+        <Chart hourlyPrecipitation={hourlyPrecipitation} />
         <WrapperForecast>
           <Title>Precipitation</Title>
           <WrapperRows>
