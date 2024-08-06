@@ -47,7 +47,7 @@ const Chart = ({ hourlyPrecipitation }) => {
         label: "Sales of the week",
         data: precipPercent,
         backgroundColor: "pink",
-        borderColor: "black",
+        borderColor: "red",
         pointBorderColor: "green",
         fill: true,
         tension: 0.4,
@@ -58,6 +58,7 @@ const Chart = ({ hourlyPrecipitation }) => {
   const options = {
     plugins: {
       legend: true,
+      filler: true,
     },
     scales: {
       y: {
