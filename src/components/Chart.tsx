@@ -15,10 +15,28 @@ ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 const Chart = ({ hourlyPrecipitation }) => {
   console.log("chart weather", hourlyPrecipitation);
 
-  // const precipTime =
+  const [precipTime, setPrecipTime] = useState<any>(null);
+
+  useEffect(() => {
+    function setPrecipTimeArr(precipData: string | any[]) {
+      let precipTimeArr = [];
+      for (let i = 0; i < precipData.length; i++) {
+        const dt = precipData[i].dt;
+        if (new Date(dt * 1000).getHours() > 12) {
+          const time = new Date(dt * 1000).getHours() - 12 + " PM";
+          precipTimeArr.push(time);
+        } else {
+          const time = new Date(dt * 1000).getHours() + " AM";
+          precipTimeArr.push(time);
+        }
+      }
+      setPrecipTime(precipTimeArr);
+    }
+    hourlyPrecipitation && setPrecipTimeArr(hourlyPrecipitation);
+  }, []);
 
   const data = {
-    labels: ["Mon", "Tues", "Wed"],
+    labels: precipTime,
     datasets: [
       {
         label: "Sales of the week",
