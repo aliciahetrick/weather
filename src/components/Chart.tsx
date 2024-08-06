@@ -16,21 +16,26 @@ const Chart = ({ hourlyPrecipitation }) => {
   console.log("chart weather", hourlyPrecipitation);
 
   const [precipTime, setPrecipTime] = useState<any>(null);
+  const [precipPercent, setPrecipPercent] = useState<any>(null);
 
   useEffect(() => {
     function setPrecipTimeArr(precipData: string | any[]) {
       let precipTimeArr = [];
+      let precipPercentArr = [];
       for (let i = 0; i < precipData.length; i++) {
         const dt = precipData[i].dt;
         if (new Date(dt * 1000).getHours() > 12) {
           const time = new Date(dt * 1000).getHours() - 12 + " PM";
           precipTimeArr.push(time);
+          precipPercentArr.push(precipData[i].pop * 100);
         } else {
           const time = new Date(dt * 1000).getHours() + " AM";
           precipTimeArr.push(time);
+          precipPercentArr.push(precipData[i].pop * 100);
         }
       }
       setPrecipTime(precipTimeArr);
+      setPrecipPercent(precipPercentArr);
     }
     hourlyPrecipitation && setPrecipTimeArr(hourlyPrecipitation);
   }, []);
@@ -40,7 +45,7 @@ const Chart = ({ hourlyPrecipitation }) => {
     datasets: [
       {
         label: "Sales of the week",
-        data: [6, 3, 9],
+        data: precipPercent,
         backgroundColor: "pink",
         borderColor: "black",
         pointBorderColor: "green",
