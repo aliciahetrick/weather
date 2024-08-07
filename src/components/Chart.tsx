@@ -54,9 +54,10 @@ const Chart = ({ hourlyPrecipitation }) => {
         label: "Precipitation",
         data: precipPercent,
         backgroundColor: "pink",
-        borderColor: "red",
+        borderColor: "#d28fff",
         pointRadius: 0,
         pointBorderColor: "green",
+        borderWidth: 10,
         // fill: true,
         tension: 0.4,
       },
@@ -113,11 +114,28 @@ const Chart = ({ hourlyPrecipitation }) => {
   return (
     <>
       <p>chart</p>
-      <div style={{ width: "600px", height: "300px" }}>
+      <Wrapper>
         <Line data={data} options={options} />
-      </div>
+      </Wrapper>
     </>
   );
 };
 
 export default Chart;
+
+const Wrapper = styled.div`
+  width: 600px;
+  height: 300px;
+
+  background-color: #2e233d;
+  border: 5px solid #f1f1f8;
+  box-shadow: 3px 3px #d28fff;
+  border-radius: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  // border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
