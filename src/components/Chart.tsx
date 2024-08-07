@@ -69,17 +69,18 @@ const Chart = ({ hourlyPrecipitation }) => {
       legend: true,
       //   filler: true,
       datalabels: {
+        color: "white",
         anchor: "end",
         align: "top",
         formatter: Math.round,
         font: {
-          weight: "bold",
+          size: 20,
         },
       },
     },
     scales: {
       y: {
-        min: 0,
+        min: -5,
         max: 100,
         display: false,
         gridLines: {
@@ -99,15 +100,13 @@ const Chart = ({ hourlyPrecipitation }) => {
           drawBorder: false,
           display: false,
         },
+        ticks: {
+          color: "white",
+          font: {
+            size: 20,
+          },
+        },
       },
-      //   yAxes: [
-      //     {
-      //       gridLines: {
-      //         drawBorder: false,
-      //         display: false,
-      //       },
-      //     },
-      //   ],
     },
   };
 
