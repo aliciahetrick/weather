@@ -51,10 +51,11 @@ const Chart = ({ hourlyPrecipitation }) => {
     labels: precipTime,
     datasets: [
       {
-        label: "Sales of the week",
+        label: "Precipitation",
         data: precipPercent,
         backgroundColor: "pink",
         borderColor: "red",
+        pointRadius: 0,
         pointBorderColor: "green",
         // fill: true,
         tension: 0.4,
@@ -79,7 +80,29 @@ const Chart = ({ hourlyPrecipitation }) => {
       y: {
         min: 0,
         max: 100,
+        display: false,
+        gridLines: {
+          drawBorder: false,
+          display: false,
+        },
       },
+      x: {
+        min: 0,
+        max: 100,
+        // display: false,
+        grid: {
+          drawBorder: false,
+          display: false,
+        },
+      },
+      //   yAxes: [
+      //     {
+      //       gridLines: {
+      //         drawBorder: false,
+      //         display: false,
+      //       },
+      //     },
+      //   ],
     },
   };
 
