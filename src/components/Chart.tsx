@@ -9,8 +9,15 @@ import {
   LinearScale, // yaxis
   PointElement,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  ChartDataLabels
+);
 
 const Chart = ({ hourlyPrecipitation }) => {
   console.log("chart weather", hourlyPrecipitation);
@@ -49,7 +56,7 @@ const Chart = ({ hourlyPrecipitation }) => {
         backgroundColor: "pink",
         borderColor: "red",
         pointBorderColor: "green",
-        fill: true,
+        // fill: true,
         tension: 0.4,
       },
     ],
@@ -58,7 +65,15 @@ const Chart = ({ hourlyPrecipitation }) => {
   const options = {
     plugins: {
       legend: true,
-      filler: true,
+      //   filler: true,
+      datalabels: {
+        anchor: "end",
+        align: "top",
+        formatter: Math.round,
+        font: {
+          weight: "bold",
+        },
+      },
     },
     scales: {
       y: {
