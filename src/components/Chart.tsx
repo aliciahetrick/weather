@@ -82,13 +82,17 @@ const Chart = ({ hourlyPrecipitation }) => {
         max: 100,
         display: false,
         gridLines: {
-          drawBorder: false,
+          drawsBorder: false,
           display: false,
         },
       },
       x: {
         min: 0,
         max: 100,
+        border: {
+          display: false,
+        },
+
         // display: false,
         grid: {
           drawBorder: false,
