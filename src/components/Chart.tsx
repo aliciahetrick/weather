@@ -45,7 +45,7 @@ const Chart = ({ hourlyPrecipitation }) => {
       setPrecipPercent(precipPercentArr);
     }
     hourlyPrecipitation && setPrecipTimeArr(hourlyPrecipitation);
-  }, []);
+  }, [hourlyPrecipitation]);
 
   const data = {
     labels: precipTime,
