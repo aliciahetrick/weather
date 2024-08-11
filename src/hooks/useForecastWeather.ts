@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { useEffect, useState } from "react";
 import { IWeeklyWeatherData } from "../interfaces/IWeeklyWeatherData";
 import { IHourlyPrecipitation } from "../interfaces/IHourlyPrecipitation";

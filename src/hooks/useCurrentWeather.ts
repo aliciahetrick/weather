@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { useEffect, useState } from "react";
 import { ICurrentWeatherData } from "../interfaces/ICurrentWeatherData";
 import { temporaryCurrentWeatherData } from "../testData/temporaryCurrentWeatherData";
