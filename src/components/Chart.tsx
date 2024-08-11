@@ -10,6 +10,7 @@ import {
   PointElement,
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { IHourlyPrecipitation } from "../interfaces/IHourlyPrecipitation";
 
 ChartJS.register(
   LineElement,
@@ -19,7 +20,11 @@ ChartJS.register(
   ChartDataLabels
 );
 
-const Chart = ({ hourlyPrecipitation }) => {
+interface Props {
+  hourlyPrecipitation: IHourlyPrecipitation[];
+}
+
+const Chart = ({ hourlyPrecipitation }: Props) => {
   console.log("chart weather", hourlyPrecipitation);
 
   const [precipTime, setPrecipTime] = useState<any>(null);
