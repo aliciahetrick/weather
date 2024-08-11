@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ICurrentWeatherData } from "../interfaces/ICurrentWeatherData";
-import { temporaryCurrentWeatherData } from "../testData/sTemporaryCurrentWeatherData";
+import { temporaryCurrentWeatherData } from "../testData/temporaryCurrentWeatherData";
 
 export function useCurrentWeather() {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;

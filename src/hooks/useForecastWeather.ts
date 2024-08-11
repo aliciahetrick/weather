@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { IWeeklyWeatherData } from "../interfaces/IWeeklyWeatherData";
 import { IHourlyPrecipitation } from "../interfaces/IHourlyPrecipitation";
 import { IDailyWeatherData } from "../interfaces/IDailyWeatherData";
-import { temporaryWeeklyWeatherData } from "../testData/sTemporaryWeeklyWeatherData";
+import { temporaryWeeklyWeatherData } from "../testData/temporaryWeeklyWeatherData";
 
 export function useForecastWeather() {
   //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;

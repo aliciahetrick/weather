@@ -1,6 +1,6 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
-import { temporaryWeeklyWeatherData } from "../testData/sTemporaryWeeklyWeatherData";
+import { temporaryWeeklyWeatherData } from "../testData/temporaryWeeklyWeatherData";
 import styled from "styled-components";
 import Chart from "./Chart";
 import { useForecastWeather } from "../hooks/useForecastWeather";
