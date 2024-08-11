@@ -1,4 +1,4 @@
-export const TemporaryWeeklyWeatherData = {
+export const temporaryWeeklyWeatherData = {
   cod: "200",
   message: 0,
   cnt: 40,

@@ -3,14 +3,12 @@ import styled from "styled-components";
 
 import "./App.css";
 import Forecast from "./components/Forecast";
-import Chart from "./components/Chart";
 
 function App() {
   return (
     <Wrapper>
       <WrapperTop>
         <CurrentWeather />
-        {/* <Chart /> */}
       </WrapperTop>
       <WrapperBottom>
         <Forecast />
@@ -32,5 +30,5 @@ const WrapperTop = styled.div`
 `;
 
 const WrapperBottom = styled.div`
-  // border: 1px solid blue;
+  border: 1px solid blue;
 `;

@@ -1,6 +1,6 @@
 // data exported from https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units} endpoint to avoid hitting rate limit
 
-export const TemporaryCurrentWeatherData = {
+export const temporaryCurrentWeatherData = {
   coord: {
     lon: -73.9558,
     lat: 40.7691,

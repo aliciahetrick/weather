@@ -1,102 +1,21 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
-import { TemporaryWeeklyWeatherData } from "./TemporaryWeeklyWeatherData";
+import { temporaryWeeklyWeatherData } from "../testData/sTemporaryWeeklyWeatherData";
 import styled from "styled-components";
 import Chart from "./Chart";
-
-export interface IWeeklyWeatherData {
-  list: any[];
-}
-
-export interface IHourlyPrecipitation {
-  pop: number;
-  dt: number;
-}
-
-export interface IDailyWeatherData {
-  weather: any[];
-  pop: number;
-  dt: number;
-  main: { temp_max: number; temp_min: number };
-}
+import { useForecastWeather } from "../hooks/useForecastWeather";
 
 const Forecast = () => {
-  //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
-  //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
-  //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
-  //   const units = "imperial";
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
-  const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
-  const [hourlyPrecipitation, setHourlyPrecipitation] = useState<
-    IHourlyPrecipitation[] | null
-  >(null);
-  const [dailyWeather, setDailyWeather] = useState<IDailyWeatherData[] | null>(
-    null
-  );
-
-  //   useEffect(() => {
-  //     fetch(
-  //       `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,
-  //       {
-  //         method: "GET",
-  //       }
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setWeather(data);
-  //       })
-  //       .catch((error) => console.log("error", error));
-  //   }, []);
-
-  useEffect(() => {
-    //fetches the weather every 3 hours
-    // const fetchDataInterval = setInterval(() => {
-    setWeather(TemporaryWeeklyWeatherData);
-    // }, 3 * 60 * 60 * 1000); // 3 hours in milliseconds
-    // return () => clearInterval(fetchDataInterval);
-  }, []);
-
-  useEffect(() => {
-    let newArrDaily = weather?.list.filter(function (_value, index) {
-      return index % 8 == 0;
-    });
-    setDailyWeather(newArrDaily);
-
-    let newArrPrecip = weather?.list.slice(0, 5);
-    setHourlyPrecipitation(newArrPrecip);
-  }, [weather]);
-
-  console.log("daily weather", dailyWeather);
+  const hourlyPrecipitation = useForecastWeather().hourlyPrecipitation;
+  const dailyWeather = useForecastWeather().dailyWeather;
 
   return (
     <WrapperColumns>
       <div>
         <Chart hourlyPrecipitation={hourlyPrecipitation} />
-        <WrapperForecast>
-          <Title>Precipitation</Title>
-          <WrapperRows>
-            {hourlyPrecipitation &&
-              hourlyPrecipitation.map((listItem) => {
-                if (new Date(listItem.dt * 1000).getHours() > 12) {
-                  return (
-                    <WeeklyWeatherCard>
-                      {"  " +
-                        (new Date(listItem.dt * 1000).getHours() - 12) +
-                        " PM"}
-                      <div>{listItem.pop * 100}%</div>
-                    </WeeklyWeatherCard>
-                  );
-                }
-                return (
-                  <WeeklyWeatherCard>
-                    {"  " + new Date(listItem.dt * 1000).getHours() + " AM"}
-                    <div>{listItem.pop * 100}%</div>
-                  </WeeklyWeatherCard>
-                );
-              })}
-          </WrapperRows>
-        </WrapperForecast>
+        <WrapperForecast></WrapperForecast>
       </div>
       <div>
         <WrapperForecast>
