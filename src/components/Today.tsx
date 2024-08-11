@@ -5,8 +5,6 @@ import styled from "styled-components";
 import { useCurrentWeather } from "../hooks/useCurrentWeather";
 
 const Today = () => {
-  // console.log("weatherfdj", weather.weather[0].main);
-
   const weather = useCurrentWeather();
 
   return (
