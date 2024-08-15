@@ -1,17 +1,14 @@
 import styled from "styled-components";
-import Chart from "./Chart";
 import { useForecastWeather } from "../hooks/useForecastWeather";
 
 const Forecast = () => {
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
-  const hourlyPrecipitation = useForecastWeather().hourlyPrecipitation;
   const dailyWeather = useForecastWeather().dailyWeather;
 
   return (
     <WrapperColumns>
       <div>
-        <Chart hourlyPrecipitation={hourlyPrecipitation} />
         <WrapperForecast></WrapperForecast>
       </div>
       <div>

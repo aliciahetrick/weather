@@ -9,14 +9,14 @@ const Today = () => {
 
   return (
     <>
-      <Title>Current</Title>
+      <WrapperCurrent></WrapperCurrent>
       <Wrapper>
         <WrapperLeft>
           {/* <WrapperTop> */}
           {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
           {/* </WrapperTop> */}
         </WrapperLeft>
-        <WrapperMiddle>
+        {/* <WrapperMiddle>
           {weather && (
             <WeatherEvent>{weather.weather[0].description}</WeatherEvent>
           )}
@@ -36,7 +36,7 @@ const Today = () => {
         <WrapperRight>
           <DateTime weather={weather} />
           <SunsetTime weather={weather} />
-        </WrapperRight>
+        </WrapperRight> */}
       </Wrapper>
     </>
   );
@@ -51,20 +51,18 @@ const Wrapper = styled.div`
   margin-right: 50px;
 `;
 
-const Title = styled.div`
-  text-align: center;
-  font-size: 50px;
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
+const WrapperCurrent = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid pink;
 `;
 
-const WeatherEvent = styled.div`
-  font-size: 50px;
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-`;
+// const WeatherEvent = styled.div`
+//   font-size: 50px;
+//   font-weight: 600;
+//   font-family: "Raleway", sans-serif;
+//   text-transform: uppercase;
+// `;
 
 const WrapperLeft = styled.div`
   font-size: 200px;
@@ -99,22 +97,22 @@ const WrapperMiddle = styled.div`
   padding: 0.5em;
 `;
 
-const WrapperRight = styled.div`
-  display: flex;
-  flex-direction: column;
-  border-radius: 2em;
-  font-size: 80px;
-  // padding-top: 50px;
-  text-align: right;
+// const WrapperRight = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   border-radius: 2em;
+//   font-size: 80px;
+//   // padding-top: 50px;
+//   text-align: right;
 
-  background-color: #2e233d;
-  border: 5px solid #f1f1f8;
-  box-shadow: 3px 3px #d28fff;
-  border-radius: 0.25em;
-  // margin: 2em;
-  padding: 0.5em;
-`;
+//   background-color: #2e233d;
+//   border: 5px solid #f1f1f8;
+//   box-shadow: 3px 3px #d28fff;
+//   border-radius: 0.25em;
+//   // margin: 2em;
+//   padding: 0.5em;
+// `;
 
-const SVG = styled.img`
-  width: 100px;
-`;
+// const SVG = styled.img`
+//   width: 100px;
+// `;

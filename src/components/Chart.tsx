@@ -117,7 +117,6 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
 
   return (
     <>
-      <p>chart</p>
       <Wrapper>
         <Line data={data} options={options} />
       </Wrapper>
