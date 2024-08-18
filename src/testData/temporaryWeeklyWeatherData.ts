@@ -69,7 +69,7 @@ export const temporaryWeeklyWeatherData = {
         gust: 12.03,
       },
       visibility: 10000,
-      pop: 0.1,
+      pop: 0.3,
       sys: {
         pod: "d",
       },
@@ -105,7 +105,7 @@ export const temporaryWeeklyWeatherData = {
         gust: 9.98,
       },
       visibility: 10000,
-      pop: 0.5,
+      pop: 1,
       sys: {
         pod: "n",
       },

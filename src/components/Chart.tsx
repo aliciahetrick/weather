@@ -8,6 +8,7 @@ import {
   CategoryScale, // x axis
   LinearScale, // y axis
   PointElement,
+  Title,
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { IHourlyPrecipitation } from "../interfaces/IHourlyPrecipitation";
@@ -17,7 +18,8 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
-  ChartDataLabels
+  ChartDataLabels,
+  Title
 );
 
 interface Props {
@@ -58,12 +60,9 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
       {
         label: "Precipitation",
         data: precipPercent,
-        backgroundColor: "pink",
         borderColor: "#d28fff",
         pointRadius: 0,
-        pointBorderColor: "green",
         borderWidth: 10,
-        // fill: true,
         tension: 0.4,
       },
     ],
@@ -71,24 +70,36 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
 
   const options = {
     plugins: {
+      title: {
+        display: true,
+        text: "PRECIPITATION",
+        color: "white",
+        font: {
+          size: 35,
+          weight: 600,
+          family: "Rubik Variable",
+        },
+      },
       legend: true,
       //   filler: true,
       datalabels: {
         color: "white",
         anchor: "end",
         align: "top",
-        formatter: Math.round,
+        formatter: function (value: number) {
+          return Math.round(value) + "%";
+        },
         font: {
           size: 20,
           weight: 600,
-          family: "sans-serif",
+          family: "Rubik Variable",
         },
       },
     },
     scales: {
       y: {
         min: -5,
-        max: 100,
+        max: 120,
         display: false,
         gridLines: {
           drawsBorder: false,
@@ -112,7 +123,7 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
           font: {
             size: 20,
             weight: 600,
-            family: "sans-serif",
+            family: "Rubik Variable",
           },
         },
       },
