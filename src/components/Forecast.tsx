@@ -59,8 +59,6 @@ const WrapperColumns = styled.div`
 `;
 
 const WrapperRows = styled.div`
-  // border: 5px solid #f1f1f8;
-  // // box-shadow: 3px 3px #d28fff;
   border-radius: 0.5em;
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -95,7 +93,7 @@ const Title = styled.div`
 const WeeklyWeatherCard = styled.div`
   background-color: #2e233d;
   border: 5px solid #f1f1f8;
-  box-shadow: 3px 3px #d28fff;
+  box-shadow: 5px 5px #d28fff;
   border-radius: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;

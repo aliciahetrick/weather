@@ -57,7 +57,7 @@ const Title = styled.div`
 
 const CurrentContainerWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   margin-left: 3em;
   margin-right: 3em;
   gap: 20px;

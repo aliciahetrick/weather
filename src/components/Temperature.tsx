@@ -10,7 +10,9 @@ const Temperature = ({ weather }: Props) => {
   return (
     <>
       <Wrapper>
-        {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
+        <Temp>
+          {weather && <div>{Math.floor(weather.main.temp)}&deg;</div>}
+        </Temp>
 
         {weather && weather.weather[0].main === "Clouds" && (
           <SVG src="/cloud.svg"></SVG>
@@ -46,7 +48,6 @@ const Wrapper = styled.div`
   font-size: 150px;
   font-weight: 600;
   display: flex;
-  //   gap: 10px;
   flex: 1;
   flex-direction: column;
   align-items: center;
@@ -54,16 +55,21 @@ const Wrapper = styled.div`
 
   background-color: #2e233d;
   border: 5px solid #f1f1f8;
-  box-shadow: 3px 3px #d28fff;
+  box-shadow: 5px 5px #d28fff;
   border-radius: 0.15em;
-  // margin: 2em;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
+  //   padding-left: 0.25em;
+  //   padding-right: 0.25em;
 
   font-weight: 600;
   font-family: "Rubik Variable", sans-serif;
 `;
 
+const Temp = styled.div`
+  margin-bottom: -20px;
+  margin-top: -20px;
+`;
+
 const SVG = styled.img`
   width: 100px;
+  margin-bottom: 10px;
 `;
