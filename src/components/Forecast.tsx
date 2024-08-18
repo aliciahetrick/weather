@@ -54,10 +54,8 @@ const Forecast = () => {
 export default Forecast;
 
 const WrapperColumns = styled.div`
-  //   border: 1px solid red;
   display: flex;
   flex-direction: column;
-  // border: 1px solid green;
 `;
 
 const WrapperRows = styled.div`
@@ -83,6 +81,7 @@ const WrapperRows = styled.div`
 const WrapperForecast = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 20px;
 `;
 
 const Title = styled.div`

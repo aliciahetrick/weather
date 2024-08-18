@@ -55,8 +55,9 @@ const Wrapper = styled.div`
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  font-size: 60px;
 `;
 
 const SVG = styled.img`
-  width: 50px;
+  width: 70px;
 `;

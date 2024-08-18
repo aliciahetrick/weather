@@ -1,4 +1,3 @@
-import CurrentWeather from "./components/Today";
 import styled from "styled-components";
 
 import "./App.css";
@@ -15,13 +14,13 @@ function App() {
   const weather = useCurrentWeather();
   return (
     <Wrapper>
-      <Title>Current</Title>
       <WrapperTop>
-        {/* <CurrentWeather /> */}
-
-        <Temperature weather={weather} />
-        <Times weather={weather} />
-        <Chart hourlyPrecipitation={hourlyPrecipitation} />
+        <Title>Current</Title>
+        <CurrentContainerWrapper>
+          <Temperature weather={weather} />
+          <Times weather={weather} />
+          <Chart hourlyPrecipitation={hourlyPrecipitation} />
+        </CurrentContainerWrapper>
       </WrapperTop>
       <WrapperBottom>
         <Forecast />
@@ -36,6 +35,14 @@ const Wrapper = styled.div`
   // border: 2px solid purple;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const WrapperTop = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 const Title = styled.div`
@@ -46,7 +53,7 @@ const Title = styled.div`
   text-transform: uppercase;
 `;
 
-const WrapperTop = styled.div`
+const CurrentContainerWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-left: 3em;
@@ -54,6 +61,4 @@ const WrapperTop = styled.div`
   gap: 20px;
 `;
 
-const WrapperBottom = styled.div`
-  border: 1px solid blue;
-`;
+const WrapperBottom = styled.div``;

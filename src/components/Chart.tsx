@@ -127,13 +127,13 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
 export default Chart;
 
 const Wrapper = styled.div`
-  width: 700px;
-  height: 400px;
+  width: 650px;
+  height: 350px;
 
   background-color: #2e233d;
   border: 5px solid #f1f1f8;
   box-shadow: 3px 3px #d28fff;
-  border-radius: 0.5em;
+  border-radius: 1em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   // border: 1px solid black;

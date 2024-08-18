@@ -36,7 +36,7 @@ const Temperature = ({ weather }: Props) => {
 export default Temperature;
 
 const WeatherEvent = styled.div`
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
@@ -46,16 +46,16 @@ const Wrapper = styled.div`
   font-size: 150px;
   font-weight: 600;
   display: flex;
+  //   gap: 10px;
   flex: 1;
   flex-direction: column;
   align-items: center;
-  justif7-content: center;
-  // margin-right: 600px;
+  justify-content: center;
 
   background-color: #2e233d;
   border: 5px solid #f1f1f8;
   box-shadow: 3px 3px #d28fff;
-  border-radius: 0.25em;
+  border-radius: 0.15em;
   // margin: 2em;
   padding-left: 0.25em;
   padding-right: 0.25em;

@@ -25,6 +25,7 @@ const WrapperRight = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 20px;
   border-radius: 2em;
   font-size: 80px;
   // padding-top: 50px;

@@ -47,7 +47,7 @@ const CurrentDateAndTime = ({ weather }: Props) => {
 
   return (
     <Wrapper>
-      <div>{date}</div>
+      <DateWrapper>{date}</DateWrapper>
       <Time>
         <SVG src="/time.svg"></SVG>
 
@@ -69,13 +69,22 @@ const Wrapper = styled.div`
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   align-text: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+const DateWrapper = styled.div`
+  font-size: 60px;
+  text-align: center;
 `;
 
 const Time = styled.div`
   display: flex;
   justify-content: space-between;
+  font-size: 60px;
 `;
 
 const SVG = styled.img`
-  width: 50px;
+  width: 70px;
 `;
