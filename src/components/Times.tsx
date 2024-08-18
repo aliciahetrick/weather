@@ -38,14 +38,3 @@ const WrapperRight = styled.div`
   // margin: 2em;
   padding: 0.5em;
 `;
-
-const WeatherEvent = styled.div`
-  font-size: 50px;
-  font-weight: 600;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-`;
-
-const SVG = styled.img`
-  width: 100px;
-`;

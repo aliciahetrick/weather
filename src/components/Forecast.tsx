@@ -88,7 +88,7 @@ const Title = styled.div`
   text-align: center;
   font-size: 50px;
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Rubik Variable", sans-serif;
   text-transform: uppercase;
 `;
 
@@ -105,6 +105,8 @@ const WeeklyWeatherCard = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 300px;
+  font-weight: 600;
+  font-family: "Rubik Variable", sans-serif;
 `;
 
 const SVG = styled.img`

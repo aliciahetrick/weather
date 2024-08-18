@@ -66,7 +66,7 @@ export default CurrentDateAndTime;
 const Wrapper = styled.div`
   font-size: 50px;
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Rubik Variable", sans-serif;
   text-transform: uppercase;
   align-text: left;
   display: flex;

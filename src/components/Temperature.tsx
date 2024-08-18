@@ -38,7 +38,7 @@ export default Temperature;
 const WeatherEvent = styled.div`
   font-size: 40px;
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Rubik Variable", sans-serif;
   text-transform: uppercase;
 `;
 
@@ -59,6 +59,9 @@ const Wrapper = styled.div`
   // margin: 2em;
   padding-left: 0.25em;
   padding-right: 0.25em;
+
+  font-weight: 600;
+  font-family: "Rubik Variable", sans-serif;
 `;
 
 const SVG = styled.img`

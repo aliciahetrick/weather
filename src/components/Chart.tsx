@@ -80,6 +80,8 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
         formatter: Math.round,
         font: {
           size: 20,
+          weight: 600,
+          family: "sans-serif",
         },
       },
     },
@@ -109,6 +111,8 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
           color: "white",
           font: {
             size: 20,
+            weight: 600,
+            family: "sans-serif",
           },
         },
       },
@@ -142,4 +146,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  font-weight: 600;
+  font-family: "Rubik Variable", sans-serif;
 `;

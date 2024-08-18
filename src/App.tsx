@@ -9,6 +9,8 @@ import { useCurrentWeather } from "./hooks/useCurrentWeather";
 import Temperature from "./components/Temperature";
 import Times from "./components/Times";
 
+import "@fontsource-variable/rubik";
+
 function App() {
   const hourlyPrecipitation = useForecastWeather().hourlyPrecipitation;
   const weather = useCurrentWeather();
@@ -49,7 +51,7 @@ const Title = styled.div`
   text-align: center;
   font-size: 50px;
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Rubik Variable", sans-serif;
   text-transform: uppercase;
 `;
 
