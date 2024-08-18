@@ -6,7 +6,7 @@ import {
   Chart as ChartJS,
   LineElement,
   CategoryScale, // x axis
-  LinearScale, // yaxis
+  LinearScale, // y axis
   PointElement,
 } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
@@ -127,8 +127,8 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
 export default Chart;
 
 const Wrapper = styled.div`
-  width: 600px;
-  height: 300px;
+  width: 700px;
+  height: 400px;
 
   background-color: #2e233d;
   border: 5px solid #f1f1f8;
@@ -138,6 +138,7 @@ const Wrapper = styled.div`
   padding-bottom: 0.25em;
   // border: 1px solid black;
   display: flex;
+  flex: 2;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;

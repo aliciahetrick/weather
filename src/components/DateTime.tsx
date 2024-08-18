@@ -1,7 +1,8 @@
 require("dotenv").config();
 import { useState, useEffect } from "react";
-import { ICurrentWeatherData } from "./Today";
+
 import styled from "styled-components";
+import { ICurrentWeatherData } from "../interfaces/ICurrentWeatherData";
 
 interface Props {
   weather: ICurrentWeatherData;
@@ -67,7 +68,7 @@ const Wrapper = styled.div`
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
-  // align-text: right;
+  align-text: left;
 `;
 
 const Time = styled.div`

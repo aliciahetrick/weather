@@ -6,14 +6,21 @@ import Forecast from "./components/Forecast";
 
 import Chart from "./components/Chart";
 import { useForecastWeather } from "./hooks/useForecastWeather";
+import { useCurrentWeather } from "./hooks/useCurrentWeather";
+import Temperature from "./components/Temperature";
+import Times from "./components/Times";
 
 function App() {
   const hourlyPrecipitation = useForecastWeather().hourlyPrecipitation;
+  const weather = useCurrentWeather();
   return (
     <Wrapper>
       <Title>Current</Title>
       <WrapperTop>
-        <CurrentWeather />
+        {/* <CurrentWeather /> */}
+
+        <Temperature weather={weather} />
+        <Times weather={weather} />
         <Chart hourlyPrecipitation={hourlyPrecipitation} />
       </WrapperTop>
       <WrapperBottom>
@@ -40,10 +47,11 @@ const Title = styled.div`
 `;
 
 const WrapperTop = styled.div`
-  border: 1px solid green;
   display: flex;
-  justify-content: center;
-  // flex-direction: row;
+  justify-content: space-between;
+  margin-left: 3em;
+  margin-right: 3em;
+  gap: 20px;
 `;
 
 const WrapperBottom = styled.div`

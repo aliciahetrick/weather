@@ -70,6 +70,7 @@ const WrapperRows = styled.div`
   // padding-top: 0.25em;
   // padding-bottom: 0.25em;
   display: flex;
+  gap: 20px;
   flex-direction: row;
   justify-content: space-around;
   font-size: 60px;
