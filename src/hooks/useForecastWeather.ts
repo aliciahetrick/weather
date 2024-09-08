@@ -24,7 +24,7 @@ export function useForecastWeather() {
     async function fetchForecast() {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=${units}&appid=${API_key}`,
           {
             method: "GET",
           }
