@@ -68,6 +68,7 @@ const Wrapper = styled.div`
 const Temp = styled.div`
   margin-bottom: -20px;
   margin-top: -20px;
+  text-align: center;
 `;
 
 const SVG = styled.img`
