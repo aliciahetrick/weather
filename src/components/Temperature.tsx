@@ -43,6 +43,7 @@ const WeatherEvent = styled.div`
   font-weight: 600;
   font-family: "Rubik Variable", sans-serif;
   text-transform: uppercase;
+  text-align: center;
 `;
 
 const Wrapper = styled.div`
@@ -68,7 +69,6 @@ const Wrapper = styled.div`
 const Temp = styled.div`
   margin-bottom: -20px;
   margin-top: -20px;
-  text-align: center;
 `;
 
 const SVG = styled.img`
