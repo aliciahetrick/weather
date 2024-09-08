@@ -16,7 +16,7 @@ export function useCurrentWeather() {
     async function fetchWeather() {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${API_key}`,
+          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,
           {
             method: "GET",
           }
