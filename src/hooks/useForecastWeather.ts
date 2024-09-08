@@ -31,7 +31,6 @@ export function useForecastWeather() {
         );
         const jsonData = await response.json();
         setWeather(jsonData);
-        console.log("fetched forecast");
       } catch (error) {
         console.log("error", error);
       }

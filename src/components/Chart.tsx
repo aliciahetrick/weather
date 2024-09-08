@@ -27,7 +27,7 @@ interface Props {
 }
 
 const Chart = ({ hourlyPrecipitation }: Props) => {
-  console.log("chart weather", hourlyPrecipitation);
+  // console.log("chart weather", hourlyPrecipitation);
 
   const [precipTime, setPrecipTime] = useState<any>(null);
   const [precipPercent, setPrecipPercent] = useState<any>(null);

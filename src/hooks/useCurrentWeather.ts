@@ -23,7 +23,6 @@ export function useCurrentWeather() {
         );
         const jsonData = await response.json();
         setWeather(jsonData);
-        console.log("fetched weather");
       } catch (error) {
         console.log("error", error);
       }
