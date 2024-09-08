@@ -68,7 +68,7 @@ const Chart = ({ hourlyPrecipitation }: Props) => {
     ],
   };
 
-  const options = {
+  const options: any = {
     plugins: {
       title: {
         display: true,
