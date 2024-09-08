@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Temperature = ({ weather }: Props) => {
+  console.log("weather", weather);
   return (
     <>
       <Wrapper>
