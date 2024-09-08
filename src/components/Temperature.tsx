@@ -28,9 +28,7 @@ const Temperature = ({ weather }: Props) => {
           <SVG src="/sun.svg"></SVG>
         )}
 
-        {weather && (
-          <WeatherEvent>{weather.weather[0].description}</WeatherEvent>
-        )}
+        {weather && <WeatherEvent>{weather.weather[0].main}</WeatherEvent>}
       </Wrapper>
     </>
   );
