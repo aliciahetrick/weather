@@ -6,10 +6,10 @@ import { IDailyWeatherData } from "../interfaces/IDailyWeatherData";
 import { temporaryWeeklyWeatherData } from "../testData/temporaryWeeklyWeatherData";
 
 export function useForecastWeather() {
-  //   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
-  //   const latitude: string | null = import.meta.env.VITE_LATITUDE;
-  //   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
-  //   const units = "imperial";
+  const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
+  const latitude: string | null = import.meta.env.VITE_LATITUDE;
+  const longitude: string | null = import.meta.env.VITE_LONGITUDE;
+  const units = "imperial";
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
   const [hourlyPrecipitation, setHourlyPrecipitation] = useState<
@@ -19,27 +19,39 @@ export function useForecastWeather() {
     null
   );
 
-  //   useEffect(() => {
-  //     fetch(
-  //       `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,
-  //       {
-  //         method: "GET",
-  //       }
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setWeather(data);
-  //       })
-  //       .catch((error) => console.log("error", error));
-  //   }, []);
-
   useEffect(() => {
-    //fetches the weather every 3 hours
-    // const fetchDataInterval = setInterval(() => {
-    setWeather(temporaryWeeklyWeatherData);
-    // }, 3 * 60 * 60 * 1000); // 3 hours in milliseconds
-    // return () => clearInterval(fetchDataInterval);
+    // define function to fetch the forecast
+    async function fetchForecast() {
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_key}&units=${units}`,
+          {
+            method: "GET",
+          }
+        );
+        const jsonData = await response.json();
+        setWeather(jsonData);
+        console.log("fetched forecast");
+      } catch (error) {
+        console.log("error", error);
+      }
+    }
+
+    // sets weather on mount
+    fetchForecast();
+
+    // re-sets weather every x miliseconds
+    // 1800000 ms = 30 minutes
+    let timer = setInterval(() => fetchForecast(), 1800000);
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
+
+  // // use hardcoded data
+  // useEffect(() => {
+  //   setWeather(temporaryWeeklyWeatherData);
+  // }, []);
 
   useEffect(() => {
     let newArrDaily = weather?.list.filter(function (_value, index) {
