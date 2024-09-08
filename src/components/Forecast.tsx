@@ -3,8 +3,9 @@ import { useForecastWeather } from "../hooks/useForecastWeather";
 
 const Forecast = () => {
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
-
   const dailyWeather = useForecastWeather().dailyWeather;
+
+  console.log("forecast", dailyWeather);
 
   return (
     <WrapperColumns>
@@ -25,6 +26,9 @@ const Forecast = () => {
                     {listItem.weather[0].main === "Clouds" && (
                       <SVG src="/cloud.svg"></SVG>
                     )}
+                    {listItem.weather[0].main === "Scattered Clouds" && (
+                      <SVG src="/cloud.svg"></SVG>
+                    )}
                     {listItem.weather[0].main === "Rain" && (
                       <SVG src="/rain.svg"></SVG>
                     )}
@@ -32,6 +36,9 @@ const Forecast = () => {
                       <SVG src="/snow.svg"></SVG>
                     )}
                     {listItem.weather[0].main === "Sun" && (
+                      <SVG src="/sun.svg"></SVG>
+                    )}
+                    {listItem.weather[0].main === "Clear" && (
                       <SVG src="/sun.svg"></SVG>
                     )}
                     {/* <SVG src="/rain.svg"></SVG>
