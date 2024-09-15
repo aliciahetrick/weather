@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useForecastWeather } from "../hooks/useForecastWeather";
+import { IWeeklyTransformedWeatherData } from "../interfaces/IWeeklyTransformedWeatherData";
 
 const Forecast = () => {
-  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   const dailyWeather = useForecastWeather().dailyWeather;
 
   console.log("forecast", dailyWeather);
@@ -17,36 +17,36 @@ const Forecast = () => {
           <Title>Forecast</Title>
           <WrapperRows>
             {dailyWeather &&
-              dailyWeather.map((listItem) => {
+              dailyWeather.map((listItem: IWeeklyTransformedWeatherData) => {
                 return (
                   <WeeklyWeatherCard>
-                    {dayNames[new Date(listItem.dt * 1000).getDay()]}
-                    {"  " + new Date(listItem.dt * 1000).getDate()}
+                    {listItem.dt_txt}
                     {/* <SVG src="/cloud.svg"></SVG> */}
-                    {listItem.weather[0].main === "Clouds" && (
+                    {listItem.weatherEvent === "Clouds" && (
                       <SVG src="/cloud.svg"></SVG>
                     )}
-                    {listItem.weather[0].main === "Scattered Clouds" && (
+                    {listItem.weatherEvent === "Scattered Clouds" && (
                       <SVG src="/cloud.svg"></SVG>
                     )}
-                    {listItem.weather[0].main === "Rain" && (
+                    {listItem.weatherEvent === "Rain" && (
                       <SVG src="/rain.svg"></SVG>
                     )}
-                    {listItem.weather[0].main === "Snow" && (
+                    {listItem.weatherEvent === "Snow" && (
                       <SVG src="/snow.svg"></SVG>
                     )}
-                    {listItem.weather[0].main === "Sun" && (
+                    {listItem.weatherEvent === "Sun" && (
                       <SVG src="/sun.svg"></SVG>
                     )}
-                    {listItem.weather[0].main === "Clear" && (
+                    {listItem.weatherEvent === "Clear" && (
                       <SVG src="/sun.svg"></SVG>
                     )}
-                    {/* <SVG src="/rain.svg"></SVG>
-                <SVG src="/snow.svg"></SVG>
-                <SVG src="/sun.svg"></SVG>  */}
                     <HighAndLowTemp>
-                      <div>{Math.floor(listItem.main.temp_max)}</div>
-                      <div>{Math.floor(listItem.main.temp_min)}</div>
+                      <div>
+                        {Math.round((listItem.temp_max * 9) / 5 - 459.67)}{" "}
+                      </div>
+                      <div>
+                        {Math.round((listItem.temp_min * 9) / 5 - 459.67)}{" "}
+                      </div>
                     </HighAndLowTemp>
                   </WeeklyWeatherCard>
                 );
