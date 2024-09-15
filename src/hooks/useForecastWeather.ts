@@ -4,13 +4,12 @@ import { IWeeklyWeatherData } from "../interfaces/IWeeklyWeatherData";
 import { IWeeklyTransformedWeatherData } from "../interfaces/IWeeklyTransformedWeatherData";
 import { IHourlyPrecipitation } from "../interfaces/IHourlyPrecipitation";
 import { IDailyWeatherData } from "../interfaces/IDailyWeatherData";
-import { temporaryWeeklyWeatherData } from "../testData/temporaryWeeklyWeatherData";
+// import { temporaryWeeklyWeatherData } from "../testData/temporaryWeeklyWeatherData";
 
 export function useForecastWeather() {
   const API_key = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
   const latitude: string | null = import.meta.env.VITE_LATITUDE;
   const longitude: string | null = import.meta.env.VITE_LONGITUDE;
-  const units = "imperial";
 
   const [weather, setWeather] = useState<IWeeklyWeatherData | null>(null);
   const [hourlyPrecipitation, setHourlyPrecipitation] = useState<
