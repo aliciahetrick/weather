@@ -104,12 +104,21 @@ export function useForecastWeather() {
         // Find most frequent weather condition
         let mostFrequentWeather = "";
         let maxCount = 0;
+
         Object.keys(dayData.weatherConditions).forEach((condition) => {
-          if (dayData.weatherConditions[condition] > maxCount) {
-            maxCount = dayData.weatherConditions[condition];
-            mostFrequentWeather = condition;
+          if (condition === "Rain") {
+            mostFrequentWeather = "Rain";
           }
         });
+
+        if (mostFrequentWeather === "") {
+          Object.keys(dayData.weatherConditions).forEach((condition) => {
+            if (dayData.weatherConditions[condition] > maxCount) {
+              maxCount = dayData.weatherConditions[condition];
+              mostFrequentWeather = condition;
+            }
+          });
+        }
 
         results.push({
           dt_txt:
